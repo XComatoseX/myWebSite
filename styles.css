@@ -1,0 +1,908 @@
+:root {
+    --primary: #0082fb;
+    --accent: #7000ff;
+    --bg-dark: #0f1117;
+    --card-bg: #1a1d26;
+    --text-light: #f4f4f6;
+    --text-dim: #a0a5b5;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: var(--bg-dark);
+    color: var(--text-light);
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+/* Шапка сайту */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 5%;
+    background: rgba(15, 17, 23, 0.9);
+    backdrop-filter: blur(10px);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 100;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.logo {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 900;
+    font-size: 1.5rem;
+    color: #fff;
+    letter-spacing: 1px;
+}
+
+.logo span {
+    color: var(--primary);
+}
+
+.header-phone {
+    color: var(--text-light);
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 1.1rem;
+    transition: color 0.3s;
+}
+
+.header-phone:hover {
+    color: var(--primary);
+}
+
+/* Головний екран (Hero Section) */
+.hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 120px 5% 60px 5%;
+    max-width: 1200px;
+    margin: 0 auto;
+    gap: 40px;
+}
+
+.hero-text {
+    flex: 1;
+}
+
+.hero-badge {
+    display: inline-block;
+    background: linear-gradient(90deg, var(--primary), var(--accent));
+    color: #fff;
+    padding: 6px 16px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+}
+
+.hero-title {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 3.5rem;
+    font-weight: 900;
+    line-height: 1.1;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+    background: linear-gradient(135deg, #ffffff 40%, var(--text-dim));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.hero-subtitle {
+    font-size: 1.2rem;
+    color: var(--text-dim);
+    margin-bottom: 30px;
+}
+
+.price-tag {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 30px;
+    color: #fff;
+}
+
+.price-tag span {
+    color: var(--primary);
+}
+
+.btn-group {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.btn {
+    padding: 15px 35px;
+    border-radius: 8px;
+    font-weight: 700;
+    text-decoration: none;
+    font-size: 1rem;
+    transition: transform 0.2s, box-shadow 0.2s;
+    cursor: pointer;
+    display: inline-block;
+}
+
+.btn-primary {
+    background: linear-gradient(144deg, #00C6FF 0%, #0072FF 100%);
+    color: #fff;
+    box-shadow: 0 4px 20px rgba(0, 130, 251, 0.4);
+}
+
+.btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 25px rgba(0, 130, 251, 0.6);
+}
+
+.btn-red {
+    background: linear-gradient(144deg, #9b51e0 0%, #681ba8 100%);
+    color: #ffffff;
+    border: none;
+    box-shadow: 0 4px 20px rgba(115, 96, 242, 0.4);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.btn-red:hover {
+    box-shadow: 0 10px 25px rgba(138, 43, 226, 0.55);
+    transform: translateY(-2px);
+}
+
+/* Зображення Hero */
+.hero-image {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.hero-image img {
+    width: 100%;
+    max-width: 500px;
+    height: auto;
+    filter: drop-shadow(0 15px 30px rgba(0, 130, 251, 0.25));
+    animation: float 4s ease-in-out infinite;
+}
+
+@keyframes float {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-15px); }
+    100% { transform: translateY(0px); }
+}
+
+/* Секція "Що ви отримуєте" */
+.included-section {
+    background-color: #0b0c10;
+    padding: 32px 24px 60px 24px;
+    color: #ffffff;
+    font-family: 'Inter', 'Roboto', sans-serif;
+}
+
+.included-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    background: linear-gradient(180deg, #12131a 0%, #0f1017 100%);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 24px;
+    padding: 48px 40px;
+    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.5);
+    position: relative;
+    overflow: hidden;
+}
+
+.included-container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, transparent 0%, #00C6FF 50%, transparent 100%);
+}
+
+.included-header {
+    max-width: 720px;
+    margin-bottom: 40px;
+}
+
+.included-title {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 32px;
+    font-weight: 900;
+    color: #ffffff;
+    margin-bottom: 16px;
+    line-height: 1.2;
+}
+
+.included-desc {
+    font-size: 16px;
+    color: #8f95b2;
+    line-height: 1.6;
+}
+
+.included-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 32px 24px;
+}
+
+.included-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+}
+
+.item-icon {
+    font-size: 28px;
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 12px;
+    width: 56px;
+    height: 56px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.item-content h3 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 18px;
+    font-weight: 700;
+    color: #ffffff;
+    margin-bottom: 6px;
+}
+
+.item-content p {
+    font-size: 14px;
+    color: #8f95b2;
+    line-height: 1.5;
+}
+
+/* Секція Тарифів */
+.pricing-section {
+    background-color: #0b0c10;
+    padding: 80px 24px;
+    color: #ffffff;
+    font-family: 'Inter', 'Roboto', sans-serif;
+}
+
+.pricing-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.pricing-subtitle, 
+.conditions-subtitle {
+    color: #00C6FF;
+    font-size: 16px;
+    font-weight: 700;
+    display: block;
+    margin-bottom: 8px;
+    letter-spacing: 0.8px;
+}
+
+.pricing-title {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 40px;
+    font-weight: 900;
+    margin-bottom: 48px;
+    color: #ffffff;
+}
+
+.pricing-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 32px;
+    align-items: stretch;
+}
+
+.pricing-card {
+    background-color: #12131a;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 16px;
+    padding: 32px 24px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative;
+    transition: transform 0.24s ease, border-color 0.24s ease, box-shadow 0.24s ease;
+}
+
+.pricing-card:hover {
+    transform: translateY(-8px);
+    border-color: rgba(0, 198, 255, 0.4);
+    box-shadow: 0 16px 32px rgba(0, 0, 0, 0.4);
+}
+
+.pricing-card-featured {
+    background: linear-gradient(180deg, #181a26 0%, #12131a 100%);
+    border: 2px solid #00C6FF;
+    box-shadow: 0 8px 32px rgba(0, 198, 255, 0.2);
+}
+
+.featured-badge {
+    position: absolute;
+    top: -16px;
+    right: 24px;
+    background: linear-gradient(135deg, #00C6FF 0%, #0072FF 100%);
+    color: #ffffff;
+    font-size: 12px;
+    font-weight: 800;
+    padding: 4px 16px;
+    border-radius: 20px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.plan-name {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 24px;
+    font-weight: 800;
+    margin-bottom: 8px;
+    color: #ffffff;
+}
+
+.plan-desc {
+    font-size: 14px;
+    color: #8f95b2;
+    margin-bottom: 24px;
+    min-height: 40px;
+}
+
+.plan-price {
+    position: relative;
+    display: flex;
+    align-items: baseline;
+    gap: 8px;
+    margin-bottom: 32px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    padding-bottom: 24px;
+}
+
+.price-amount {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 48px;
+    font-weight: 900;
+    color: #ffffff;
+    line-height: 1;
+}
+
+.price-currency {
+    font-size: 20px;
+    font-weight: 700;
+    color: #00C6FF;
+}
+
+.price-period {
+    font-size: 14px;
+    color: #8f95b2;
+    margin-left: 4px;
+}
+
+.plan-features {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 32px 0;
+    flex-grow: 1;
+}
+
+.plan-features li {
+    font-size: 14px;
+    color: #c5c9db;
+    margin-bottom: 12px;
+    position: relative;
+    padding-left: 24px;
+    line-height: 1.5;
+}
+
+.plan-features li::before {
+    content: "✓";
+    position: absolute;
+    left: 0;
+    color: #00C6FF;
+    font-weight: 900;
+}
+
+.btn-card-primary {
+    display: block;
+    text-align: center;
+    background: linear-gradient(135deg, #00C6FF 0%, #0072FF 100%);
+    color: #ffffff;
+    padding: 16px 24px;
+    border-radius: 12px;
+    font-weight: 700;
+    font-size: 16px;
+    text-decoration: none;
+    box-shadow: 0 8px 24px rgba(0, 114, 255, 0.3);
+    transition: transform 0.24s ease, box-shadow 0.24s ease;
+}
+
+.btn-card-primary:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 28px rgba(0, 114, 255, 0.5);
+}
+
+.btn-card-secondary {
+    display: block;
+    text-align: center;
+    background: rgba(255, 255, 255, 0.05);
+    color: #ffffff;
+    border: 1px solid rgba(255, 255, 255, 0.16);
+    padding: 16px 24px;
+    border-radius: 12px;
+    font-weight: 700;
+    font-size: 16px;
+    text-decoration: none;
+    transition: background 0.24s ease, border-color 0.24s ease, transform 0.24s ease;
+}
+
+.btn-card-secondary:hover {
+    background: rgba(255, 255, 255, 0.12);
+    border-color: rgba(255, 255, 255, 0.32);
+    transform: translateY(-4px);
+}
+
+/* Секція Умов прокату */
+.conditions-section {
+    background-color: #0b0c10;
+    padding: 80px 5%;
+    color: #ffffff;
+    font-family: 'Roboto', sans-serif;
+}
+
+.conditions-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.conditions-title {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 3rem;
+    font-weight: 900;
+    margin-bottom: 40px;
+    color: #ffffff;
+}
+
+.conditions-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 24px;
+}
+
+.condition-card {
+    background-color: #12131a;
+    border: 1px solid #1f222e;
+    border-radius: 16px;
+    padding: 35px 30px;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.condition-card:hover {
+    transform: translateY(-5px);
+    border-color: #333748;
+}
+
+.card-number {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 3.5rem;
+    font-weight: 900;
+    line-height: 1;
+    margin-bottom: 20px;
+    background: linear-gradient(135deg, #00C6FF 0%, #0072FF 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    filter: drop-shadow(0 4px 12px rgba(0, 198, 255, 0.3));
+}
+
+.card-title {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.35rem;
+    font-weight: 800;
+    color: #ffffff;
+    margin-bottom: 14px;
+}
+
+.card-text {
+    font-size: 0.95rem;
+    color: #9aa0b4;
+    line-height: 1.6;
+}
+
+/* Секція Ігор */
+.games-section {
+    background-color: #0b0c10;
+    padding: 64px 24px;
+    color: #ffffff;
+    font-family: 'Inter', 'Roboto', sans-serif;
+}
+
+.games-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.games-subtitle {
+    color: #00C6FF;
+    font-size: 14px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    display: block;
+    margin-bottom: 8px;
+}
+
+.games-title {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 36px;
+    font-weight: 900;
+    color: #ffffff;
+    margin-bottom: 40px;
+}
+
+.games-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 24px;
+}
+
+.game-card {
+    position: relative;
+    height: 360px;
+    border-radius: 20px;
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    cursor: pointer;
+    transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.game-card:hover {
+    transform: translateY(-6px);
+    border-color: #00C6FF;
+    box-shadow: 0 12px 32px rgba(0, 198, 255, 0.25);
+}
+
+.game-card-bg {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.game-card:hover .game-card-bg {
+    transform: scale(1.06);
+}
+
+.game-card-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0) 40%, rgba(0, 0, 0, 0.85) 85%, rgba(0, 0, 0, 0.95) 100%);
+}
+
+.game-card-content {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 24px 20px;
+    z-index: 2;
+}
+
+.game-card-title {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 20px;
+    font-weight: 800;
+    color: #ffffff;
+    margin-bottom: 6px;
+    line-height: 1.2;
+}
+
+.game-card-desc {
+    font-size: 13px;
+    color: #c5c9db;
+    line-height: 1.4;
+    margin: 0;
+}
+
+.img-pos-right {
+    object-position: right center;
+}
+
+/* Секція CTA (Заклик до дії) */
+.cta-section {
+    background-color: #0b0c10;
+    padding: 64px 24px;
+    color: #ffffff;
+    font-family: 'Inter', 'Roboto', sans-serif;
+}
+
+.cta-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    background: #12131a;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 24px;
+    padding: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 32px;
+    position: relative;
+    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.4);
+}
+
+.cta-content {
+    max-width: 600px;
+}
+
+.cta-title {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 40px;
+    font-weight: 900;
+    line-height: 1.15;
+    color: #ffffff;
+    margin-bottom: 16px;
+}
+
+.cta-desc {
+    font-size: 16px;
+    color: #8f95b2;
+    line-height: 1.5;
+    margin-bottom: 16px;
+}
+
+.cta-status {
+    font-size: 14px;
+    font-weight: 600;
+    color: #00C6FF;
+    display: block;
+}
+
+.cta-action {
+    flex-shrink: 0;
+}
+
+.btn-cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: linear-gradient(135deg, #8A2BE2 0%, #6A0DAD 100%);
+    color: #ffffff;
+    padding: 16px 32px;
+    border-radius: 16px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 16px;
+    font-weight: 700;
+    text-decoration: none;
+    transition: transform 0.24s ease, box-shadow 0.24s ease, background 0.24s ease;
+    box-shadow: 0 8px 24px rgba(138, 43, 226, 0.45);
+}
+
+.btn-cta:hover {
+    background: linear-gradient(135deg, #9932CC 0%, #7B1FA2 100%);
+    box-shadow: 0 12px 32px rgba(138, 43, 226, 0.65);
+    transform: translateY(-2px);
+}
+
+/* Футер */
+.footer {
+    background-color: #07080b;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    padding: 48px 24px;
+    color: #ffffff;
+    font-family: 'Inter', 'Roboto', sans-serif;
+}
+
+.footer-container {
+    max-width: 1300px;
+    margin: 0 auto;
+    padding: 0 24px;
+}
+
+.footer-main {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 48px;
+}
+
+.footer-col {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin: 0;
+    padding: 0;
+}
+
+.footer-heading {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 18px;
+    font-weight: 700;
+    color: rgb(0, 198, 255);
+    margin-bottom: 16px;
+    line-height: 1.2;
+}
+
+.footer-subtext {
+    font-size: 14px;
+    color: #8f95b2;
+    margin-bottom: 16px;
+}
+
+.footer-socials {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.social-btn {
+    width: 44px;
+    height: 44px;
+    border-radius: 12px;
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: #00C6FF;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    transition: transform 0.24s ease, border-color 0.24s ease, box-shadow 0.24s ease, background 0.24s ease;
+}
+
+.social-btn:hover {
+    background: rgba(0, 198, 255, 0.12);
+    border-color: #00C6FF;
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0, 198, 255, 0.3);
+}
+
+.footer-contacts {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-contacts li {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    color: #c5c9db;
+    font-size: 15px;
+    margin-bottom: 12px;
+}
+
+.footer-contacts svg {
+    color: #00C6FF;
+    flex-shrink: 0;
+}
+
+.footer-contacts a {
+    color: #c5c9db;
+    text-decoration: none;
+    transition: color 0.24s ease;
+}
+
+.footer-contacts a:hover {
+    color: #00C6FF;
+}
+
+/* Медіа-запити (Адаптивність) */
+@media (max-width: 992px) {
+    .cta-container {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 32px 24px;
+    }
+
+    .cta-title {
+        font-size: 32px;
+    }
+
+    .cta-action {
+        width: 100%;
+    }
+
+    .btn-cta {
+        width: 100%;
+        justify-content: center;
+    }
+}
+
+@media (max-width: 768px) {
+    .hero {
+        flex-direction: column;
+        text-align: center;
+        padding-top: 100px;
+    }
+
+    .hero-title {
+        font-size: 2.3rem;
+    }
+
+    .btn-group {
+        justify-content: center;
+    }
+
+    .included-container {
+        padding: 32px 20px;
+        border-radius: 16px;
+    }
+
+    .included-title {
+        font-size: 24px;
+    }
+
+    .included-grid {
+        grid-template-columns: 1fr;
+        gap: 24px;
+    }
+
+    .pricing-section {
+        padding: 48px 16px;
+    }
+
+    .pricing-title {
+        font-size: 32px;
+        margin-bottom: 32px;
+    }
+
+    .pricing-grid {
+        gap: 24px;
+    }
+
+    .conditions-title {
+        font-size: 2.2rem;
+    }
+
+    .conditions-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .games-section {
+        padding: 40px 16px;
+    }
+
+    .games-title {
+        font-size: 28px;
+        margin-bottom: 24px;
+    }
+
+    .game-card {
+        height: 300px;
+    }
+}
+.footer-notice {
+    margin-top: 16px;
+    padding: 10px 12px;
+    background: rgba(255, 255, 255, 0.04);
+    border-left: 3px solid #00C6FF;
+    border-radius: 6px;
+    font-size: 13px;
+    color: #a0a5b5;
+    line-height: 1.4;
+    max-width: 320px;
+}
+
+@media (max-width: 640px) {
+    .footer-main {
+        flex-direction: column;
+        gap: 32px;
+    }
+}
