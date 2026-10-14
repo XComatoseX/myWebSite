@@ -906,3 +906,35 @@ header {
         gap: 32px;
     }
 }
+
+.footer-legal {
+      display: flex;
+    justify-content: space-around;
+    gap: 12px;
+    margin-top: 20px;
+    font-size: 14px;
+    flex-direction: column-reverse;
+    align-items: stretch;
+}
+  /* display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  margin-top: 20px;
+  font-size: 14px; */
+
+
+.footer-link {
+  color: #a0aec0;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.footer-link:hover {
+  color: #00f0ff; /* або #00f0ff для синьо-блакитної гами */
+  text-decoration: underline;
+}
+
+.footer-divider {
+  color: #4a5568;
+}
